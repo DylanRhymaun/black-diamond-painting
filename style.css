@@ -1,0 +1,94 @@
+/* Black Diamond Painting VT: shared stylesheet */
+:root{
+  --charcoal:#1c1f23;
+  --snow:#f8f9fa;
+  --ice:#8fbfe0;
+  --spruce:#2e4a3f;
+  --stone:#5d646c;
+  --line:#dde1e5;
+  --sans:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;
+  --serif:Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--serif);font-size:1.0625rem;line-height:1.7;color:var(--charcoal);background:var(--snow)}
+h1,h2,h3,.logo,nav,.btn,footer h3{font-family:var(--sans)}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em;margin:0 0 .6em}
+h1{font-size:clamp(2.4rem,6vw,4rem);font-weight:800}
+h2{font-size:clamp(1.7rem,3.5vw,2.3rem);font-weight:700}
+h3{font-size:1.2rem;font-weight:700}
+p{margin:0 0 1em;max-width:62ch}
+a{color:var(--spruce)}
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--ice);outline-offset:3px}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+section{padding:4.5rem 0}
+
+/* Header */
+header{background:var(--charcoal);color:var(--snow)}
+header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.75rem 2rem;padding-block:1rem}
+.logo{display:flex;align-items:center;gap:.7rem;color:var(--snow);text-decoration:none;font-weight:800;font-size:1.15rem;letter-spacing:-.01em}
+.logo::before{content:"";width:.9rem;height:.9rem;background:var(--ice);transform:rotate(45deg)}
+nav{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem}
+nav a{color:var(--snow);text-decoration:none;padding:.3rem 0;border-bottom:2px solid transparent}
+nav a:hover,nav a[aria-current="page"]{border-bottom-color:var(--ice)}
+
+/* Buttons */
+.btn{display:inline-block;padding:.8rem 1.5rem;background:var(--ice);color:var(--charcoal);font-weight:700;text-decoration:none;border-radius:2px}
+.btn:hover{background:#a8d0ea}
+.btn.dark{background:var(--charcoal);color:var(--snow)}
+.btn.dark:hover{background:var(--spruce)}
+
+/* Hero */
+.hero{background:var(--charcoal);color:var(--snow);padding:5rem 0;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;align-items:center}
+.hero p{font-size:1.2rem;color:#d5dade}
+.hero .btn{margin:.5rem .75rem 0 0}
+.diamond{aspect-ratio:1;width:100%;max-width:340px;justify-self:center;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);background:linear-gradient(180deg,var(--ice) 0 33%,var(--snow) 33% 66%,var(--spruce) 66% 100%)}
+.page-title{background:var(--charcoal);color:var(--snow);padding:3.5rem 0}
+.page-title h1{font-size:clamp(2rem,5vw,3rem);margin:0}
+.page-title p{margin:.75rem 0 0;color:#d5dade}
+
+/* Cards and grids */
+.grid{display:grid;gap:1.5rem}
+.grid.three{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card{background:#fff;border:1px solid var(--line);border-left:4px solid var(--spruce);padding:1.5rem}
+.card p:last-child{margin-bottom:0}
+.alt{background:#fff;border-block:1px solid var(--line)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.checks{list-style:none;padding:0;margin:0}
+.checks li{padding:.5rem 0 .5rem 1.8rem;position:relative;border-bottom:1px solid var(--line)}
+.checks li::before{content:"";position:absolute;left:.2rem;top:1.1rem;width:.6rem;height:.6rem;background:var(--spruce);transform:rotate(45deg)}
+
+/* Portfolio: swap .ph blocks for <img> tags when you have photos */
+.project .ph{aspect-ratio:4/3;display:grid;place-items:center;color:var(--snow);font-family:var(--sans);font-weight:700;background:var(--spruce)}
+.project:nth-child(3n+2) .ph{background:var(--charcoal)}
+.project:nth-child(3n+3) .ph{background:var(--stone)}
+.project img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.project h3{margin:.9rem 0 .2rem}
+.project p{color:var(--stone);margin:0}
+
+/* Testimonials */
+blockquote{margin:0}
+.quote{background:#fff;border:1px solid var(--line);padding:1.75rem}
+.quote p{font-size:1.1rem}
+.quote cite{display:block;font-family:var(--sans);font-style:normal;font-weight:700}
+.quote small{font-family:var(--sans);color:var(--stone)}
+
+/* Call to action band */
+.cta{background:var(--ice);text-align:center}
+.cta p{margin-inline:auto}
+
+/* Footer with contact */
+footer{background:var(--charcoal);color:#d5dade;padding:3.5rem 0 2rem}
+footer .grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+footer h3{color:var(--snow);font-size:1rem}
+footer p{margin:0 0 .4rem}
+footer a{color:var(--ice)}
+.legal{border-top:1px solid #343a40;margin-top:2.5rem;padding-top:1.25rem;font-size:.9rem}
+
+@media (max-width:760px){
+  section{padding:3rem 0}
+  .hero .wrap,.split{grid-template-columns:1fr}
+  .diamond{max-width:200px;justify-self:start}
+}
