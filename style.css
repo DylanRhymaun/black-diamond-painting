@@ -20,7 +20,7 @@ h3{font-size:1.2rem;font-weight:700}
 p{margin:0 0 1em;max-width:62ch}
 a{color:var(--spruce)}
 a:focus-visible,.btn:focus-visible{outline:3px solid var(--ice);outline-offset:3px}
-.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+.wrap{width:min(960px,100% - 2.5rem);margin-inline:auto}
 section{padding:4.5rem 0}
 
 /* Header */
