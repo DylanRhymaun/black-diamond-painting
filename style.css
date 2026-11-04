@@ -105,3 +105,5 @@ footer a{color:var(--ice)}
   .hero{padding-top:1.5rem}
   .hero-copy{padding-top:2rem}
 }
+
+.social{display:inline-flex;align-items:center;gap:.5rem}
