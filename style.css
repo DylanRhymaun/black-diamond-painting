@@ -1,11 +1,12 @@
 /* Black Diamond Painting VT: shared stylesheet */
 :root{
   --charcoal:#313555;
-  --snow:#f8f9fa;
+  --snow:#ffffff;
   --ice:#8fbfe0;
   --spruce:#2e4a3f;
   --stone:#5d646c;
   --line:#dde1e5;
+  --tint:#f4f6f8;
   --sans:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;
   --serif:Georgia,"Times New Roman",serif;
 }
@@ -20,16 +21,19 @@ h3{font-size:1.2rem;font-weight:700}
 p{margin:0 0 1em;max-width:62ch}
 a{color:var(--spruce)}
 a:focus-visible,.btn:focus-visible{outline:3px solid var(--ice);outline-offset:3px}
-.wrap{width:min(960px,100% - 2.5rem);margin-inline:auto}
+.wrap{width:min(1000px,100% - 2.5rem);margin-inline:auto}
 section{padding:4.5rem 0}
 
-/* Header */
-header{background:var(--charcoal);color:var(--snow)}
-header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.75rem 2rem;padding-block:1rem}
-.logo{display:flex;align-items:center;gap:.7rem;color:var(--snow);text-decoration:none;font-weight:800;font-size:1.15rem;letter-spacing:-.01em}
-.logo::before{content:"";width:.9rem;height:.9rem;background:var(--ice);transform:rotate(45deg)}
-nav{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem}
-nav a{color:var(--snow);text-decoration:none;padding:.3rem 0;border-bottom:2px solid transparent}
+/* Header: centered logo, then a hairline nav row */
+header{background:var(--snow);color:var(--charcoal)}
+header .wrap{display:flex;flex-direction:column;align-items:center;gap:2rem;padding-block:2.75rem 0}
+.logo{display:flex;flex-direction:column;align-items:center;gap:1.1rem;color:var(--charcoal);text-decoration:none;font-weight:800;font-size:1.35rem;letter-spacing:.14em;text-transform:uppercase;text-align:center}
+/* Text-only fallback mark. Disappears when the logo image is dropped in (see .logo img). */
+.logo:not(:has(img))::before{content:"";width:1.5rem;height:1.5rem;margin-bottom:.4rem;background:var(--ice);transform:rotate(45deg)}
+.logo img{display:block;width:min(320px,80vw);height:auto}
+nav{display:flex;align-items:center;gap:1.6rem;width:100%}
+nav::before,nav::after{content:"";flex:1;height:1px;background:var(--line)}
+nav a{color:var(--charcoal);text-decoration:none;font-size:.9rem;letter-spacing:.14em;text-transform:uppercase;padding:.3rem 0;border-bottom:2px solid transparent;white-space:nowrap}
 nav a:hover,nav a[aria-current="page"]{border-bottom-color:var(--ice)}
 
 /* Buttons */
@@ -38,24 +42,27 @@ nav a:hover,nav a[aria-current="page"]{border-bottom-color:var(--ice)}
 .btn.dark{background:var(--charcoal);color:var(--snow)}
 .btn.dark:hover{background:var(--spruce)}
 
-/* Hero */
-.hero{background:var(--charcoal);color:var(--snow);padding:5rem 0;overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;align-items:center}
-.hero p{font-size:1.2rem;color:#d5dade}
-.hero .btn{margin:.5rem .75rem 0 0}
+/* Hero: video sits where the reference site has its large photo */
+.hero{background:var(--snow);color:var(--charcoal);padding:2.5rem 0 4.5rem}
+.hero .wrap{display:block}
+.hero-copy{text-align:center;padding-top:3rem}
+.hero-copy h1{font-size:clamp(1.8rem,4vw,2.6rem);max-width:22ch;margin-inline:auto}
+.hero .btn{margin:.5rem .4rem 0}
 .video{position:relative;width:100%;aspect-ratio:16/9;background:#000}
 .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.page-title{background:var(--charcoal);color:var(--snow);padding:3.5rem 0}
+
+/* Inner page titles: light and centered to match the header */
+.page-title{background:var(--snow);color:var(--charcoal);padding:3rem 0 1rem;text-align:center}
 .page-title h1{font-size:clamp(2rem,5vw,3rem);margin:0}
-.page-title p{margin:.75rem 0 0;color:#d5dade}
+.page-title p{margin:.75rem auto 0;color:var(--stone)}
 
 /* Cards and grids */
 .grid{display:grid;gap:1.5rem}
 .grid.three{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
 .grid.two{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.card{background:#fff;border:1px solid var(--line);border-left:4px solid var(--spruce);padding:1.5rem}
+.card{background:var(--snow);border:1px solid var(--line);border-left:4px solid var(--spruce);padding:1.5rem}
 .card p:last-child{margin-bottom:0}
-.alt{background:#fff;border-block:1px solid var(--line)}
+.alt{background:var(--tint);border-block:1px solid var(--line)}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
 .checks{list-style:none;padding:0;margin:0}
 .checks li{padding:.5rem 0 .5rem 1.8rem;position:relative;border-bottom:1px solid var(--line)}
@@ -71,7 +78,7 @@ nav a:hover,nav a[aria-current="page"]{border-bottom-color:var(--ice)}
 
 /* Testimonials */
 blockquote{margin:0}
-.quote{background:#fff;border:1px solid var(--line);padding:1.75rem}
+.quote{background:var(--tint);border:1px solid var(--line);padding:1.75rem}
 .quote p{font-size:1.1rem}
 .quote cite{display:block;font-family:var(--sans);font-style:normal;font-weight:700}
 .quote small{font-family:var(--sans);color:var(--stone)}
@@ -90,5 +97,11 @@ footer a{color:var(--ice)}
 
 @media (max-width:760px){
   section{padding:3rem 0}
-  .hero .wrap,.split{grid-template-columns:1fr}
+  .split{grid-template-columns:1fr}
+  header .wrap{gap:1.5rem;padding-block:2rem 0}
+  .logo{font-size:1.1rem}
+  nav{flex-wrap:wrap;justify-content:center;gap:.25rem 1.25rem}
+  nav::before,nav::after{display:none}
+  .hero{padding-top:1.5rem}
+  .hero-copy{padding-top:2rem}
 }
