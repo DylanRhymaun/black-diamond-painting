@@ -12,7 +12,7 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:var(--serif);font-size:1.0625rem;line-height:1.7;color:var(--charcoal);background:var(--snow)}
+body{margin:0;font-family:var(--sans);font-size:1.0625rem;line-height:1.7;color:var(--charcoal);background:var(--snow)}
 h1,h2,h3,.logo,nav,.btn,footer h3{font-family:var(--sans)}
 h1,h2,h3{line-height:1.15;letter-spacing:-.02em;margin:0 0 .6em}
 h1{font-size:clamp(2.4rem,6vw,4rem);font-weight:800}
