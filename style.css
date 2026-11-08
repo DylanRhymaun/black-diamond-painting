@@ -1,10 +1,10 @@
 /* Black Diamond Painting VT: shared stylesheet */
 :root{
-  --charcoal:#313555;
+  --charcoal:black;
   --snow:#ffffff;
-  --ice:#8fbfe0;
+  --ice:#807d7d;
   --spruce:#2e4a3f;
-  --stone:#5d646c;
+  --stone:#464646;
   --line:#dde1e5;
   --tint:#f4f6f8;
   --sans:"Avenir Next","Segoe UI",Helvetica,Arial,sans-serif;
