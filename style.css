@@ -68,7 +68,7 @@ nav a:hover,nav a[aria-current="page"]{border-bottom-color:var(--ice)}
 .checks li{padding:.5rem 0 .5rem 1.8rem;position:relative;border-bottom:1px solid var(--line)}
 .checks li::before{content:"";position:absolute;left:.2rem;top:1.1rem;width:.6rem;height:.6rem;background:var(--spruce);transform:rotate(45deg)}
 
-/* Portfolio: swap .ph blocks for <img> tags when you have photos */
+/* Portfolio images:*/
 .project .ph{aspect-ratio:4/3;display:grid;place-items:center;color:var(--snow);font-family:var(--sans);font-weight:700;background:var(--spruce)}
 .project:nth-child(3n+2) .ph{background:var(--charcoal)}
 .project:nth-child(3n+3) .ph{background:var(--stone)}
